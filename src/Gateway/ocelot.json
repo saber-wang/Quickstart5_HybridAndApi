@@ -1,0 +1,88 @@
+{
+  "ReRoutes": [
+    { // MvcClient
+      "DownstreamPathTemplate": "/MvcClient/{route}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 50891
+        }
+      ],
+      "UpstreamPathTemplate": "/MvcClient/{route}",
+      "UpstreamHeaderTransform": {
+        "X-Forwarded-For": "{RemoteIpAddress}"
+      }
+    },
+    { // signin-oidc
+      "DownstreamPathTemplate": "/signin-oidc",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 50891
+        }
+      ],
+      "UpstreamPathTemplate": "/signin-oidc",
+      "UpstreamHeaderTransform": {
+        "X-Forwarded-For": "{RemoteIpAddress}"
+      }
+    },
+    { // signout-callback-oidc
+      "DownstreamPathTemplate": "/signout-callback-oidc",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 50891
+        }
+      ],
+      "UpstreamPathTemplate": "/signout-callback-oidc",
+      "UpstreamHeaderTransform": {
+        "X-Forwarded-For": "{RemoteIpAddress}"
+      }
+    },
+    { // MyApi
+      "DownstreamPathTemplate": "/MyApi/{route}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 50890
+        }
+      ],
+      "UpstreamPathTemplate": "/MyApi/{route}",
+      "UpstreamHeaderTransform": {
+        "X-Forwarded-For": "{RemoteIpAddress}"
+      }
+    },
+    { // IdentityServer
+      "DownstreamPathTemplate": "/{route}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 50875
+        }
+      ],
+      "UpstreamPathTemplate": "/IdentityServer/{route}",
+      "UpstreamHeaderTransform": {
+        "X-Forwarded-For": "{RemoteIpAddress}"
+      }
+    },
+    { // IdentityServer
+      "DownstreamPathTemplate": "/{route}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 50875
+        }
+      ],
+      "UpstreamPathTemplate": "/{route}",
+      "UpstreamHeaderTransform": {
+        "X-Forwarded-For": "{RemoteIpAddress}"
+      }
+    }
+  ]
+}
